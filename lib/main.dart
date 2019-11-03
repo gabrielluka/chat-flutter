@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Chat App Top",
+      title: "Chat Flu",
       debugShowCheckedModeBanner: false,
       theme: Theme.of(context).platform == TargetPlatform.iOS
           ? iosTheme
@@ -44,7 +43,7 @@ class _ChatScreenState extends State<ChatScreen> {
       top: false,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Chat"),
+          title: Text("Chat Flu"),
           centerTitle: true,
           elevation:
               Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0,
@@ -99,7 +98,7 @@ class _TextComposerState extends State<TextComposer> {
             Expanded(
               child: TextField(
                 decoration:
-                    InputDecoration.collapsed(hintText: "Enviar uma Mensagem"),
+                    InputDecoration.collapsed(hintText: "Send a message"),
                 onChanged: (text) {
                   setState(() {
                     _isTyping = text.length > 0;
@@ -117,7 +116,7 @@ class _TextComposerState extends State<TextComposer> {
               margin: const EdgeInsets.symmetric(horizontal: 4.0),
               child: Theme.of(context).platform == TargetPlatform.iOS
                   ? CupertinoButton(
-                      child: Text("Enviar"),
+                      child: Text("Send"),
                       onPressed: _isTyping ? () {} : null,
                     )
                   : IconButton(
@@ -157,7 +156,7 @@ class ChatMessage extends StatelessWidget {
                 Text("Gabriel", style: Theme.of(context).textTheme.subhead),
                 Container(
                   margin: const EdgeInsets.only(top: 5.0),
-                  child: Text("Tudo bem"),
+                  child: Text("Hey what's up ?"),
                 )
               ],
             ),
